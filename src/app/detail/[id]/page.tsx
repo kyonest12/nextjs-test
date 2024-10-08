@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: { id: string } }) {
     const cookieStore = cookies()
     const jwt = cookieStore.get('jwt')?.value
-    const todos = await fetch(`http://localhost:1337/api/todos/${params.id}?[populate]=*`, {
+    const todos = await fetch(`http://127.0.0.1:1337/api/todos/${params.id}?[populate]=*`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
