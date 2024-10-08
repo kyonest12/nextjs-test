@@ -1,0 +1,11 @@
+version: "3" 
+services:
+  nextjs:
+    container_name: fe-nextjs
+    build: .
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./.next:/app/.next
+    ports:
+      - "3000:3000"
