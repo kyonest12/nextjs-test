@@ -24,7 +24,7 @@ const AddTodoForm: React.FC = () => {
         setError(null);
         setSuccess(false);
         try {
-            const response = await fetch('http://localhost:1337/api/todos', {
+            const response = await fetch('http://127.0.0.1:1337/api/todos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

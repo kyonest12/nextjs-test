@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers'
 
 export async function generateStaticParams() {
-    const res = await fetch(`http://localhost:1337/api/todos/?[populate]=*`, {
+    const res = await fetch(`http://127.0.0.1:1337/api/todos/?[populate]=*`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

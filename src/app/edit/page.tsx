@@ -19,7 +19,7 @@ const EditTodo = () => {
 
     useEffect(() => {
         const fetchTodoById = async () => {
-            const response = await fetch(`http://localhost:1337/api/todos/${id}?[populate]=*`, {
+            const response = await fetch(`http://127.0.0.1:1337/api/todos/${id}?[populate]=*`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const EditTodo = () => {
         };
         console.log(updatedTodo)
         try {
-            const response = await fetch(`http://localhost:1337/api/todos/${id}`, {
+            const response = await fetch(`http://127.0.0.1:1337/api/todos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

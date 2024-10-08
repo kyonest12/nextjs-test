@@ -1,5 +1,5 @@
 async function getAboutPage() {
-    const res = await fetch(`http://localhost:1337/api/about-page?populate[Contact][populate]=*`);
+    const res = await fetch(`http://127.0.0.1:1337/api/about-page?populate[Contact][populate]=*`);
     const data = await res.json()
     return data
 }

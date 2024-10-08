@@ -32,7 +32,7 @@ const Login: React.FC = () => {
     useEffect(() => {
         const fetchTodos = async () => {
             try {
-                const response = await fetch(`http://localhost:1337/api/login-page?populate[form][populate]=*`, {
+                const response = await fetch(`http://127.0.0.1:1337/api/login-page?populate[form][populate]=*`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

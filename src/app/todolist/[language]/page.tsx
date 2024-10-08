@@ -29,7 +29,7 @@ const Item: React.FC<ItemProps> = ({ todo, onToggle, onDelete }) => {
             is_done: !todo.is_done,
         };
         try {
-            const response = await fetch(`http://localhost:1337/api/todos/${todo.id}`, {
+            const response = await fetch(`http://127.0.0.1:1337/api/todos/${todo.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const Item: React.FC<ItemProps> = ({ todo, onToggle, onDelete }) => {
     
     const deleteTodo = async () => {
         try {
-            const response = await fetch(`http://localhost:1337/api/todos/${todo.id}`, {
+            const response = await fetch(`http://127.0.0.1:1337/api/todos/${todo.id}`, {
                 method: 'DELETE', 
                 headers: {
                     'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ const Item: React.FC<ItemProps> = ({ todo, onToggle, onDelete }) => {
                 Edit
                 </button>
                 <button
-                    onClick={() => {router.push(`http://localhost:3000/detail/${todo.id}`)}}
+                    onClick={() => {router.push(`http://127.0.0.1:3000/detail/${todo.id}`)}}
                     className="px-4 py-2 text-white bg-slate-600 rounded hover:bg-blue-600"
                 >
                 View Detail
@@ -126,13 +126,13 @@ const TodoList = ({ params }: { params: { language: string } }) => {
     }
 
     const handleNavigate = (lang: string) => {
-        router.push(`http://localhost:3000/todolist/${lang}`);
+        router.push(`http://127.0.0.1:3000/todolist/${lang}`);
       };
 
     const handleSearch = async () => {
         try {
             
-            let url = `http://localhost:1337/api/users/me?populate[todos][populate]=*&populate[todos][filters][locale][$eq]=${params.language}`;
+            let url = `http://127.0.0.1:1337/api/users/me?populate[todos][populate]=*&populate[todos][filters][locale][$eq]=${params.language}`;
 
             const filters = [];
             if (searchTitle) {
@@ -170,7 +170,7 @@ const TodoList = ({ params }: { params: { language: string } }) => {
     useEffect(() => {
         const fetchTodos = async () => {
             try {
-                const response = await fetch(`http://localhost:1337/api/users/me?populate[todos][populate]=*&populate[todos][filters][locale][$eq]=${params.language}`, {
+                const response = await fetch(`http://127.0.0.1:1337/api/users/me?populate[todos][populate]=*&populate[todos][filters][locale][$eq]=${params.language}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
